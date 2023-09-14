@@ -61,7 +61,7 @@ function ContactBar() {
         {routes.map((route) => (
           <Link
             key={route.href}
-            className="text-md font-bold ring-offset-2 hover:ring-2 hover:ring-black rounded-md"
+            className="text-md font-bold ring-offset-2 bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 p-1 hover:text-white rounded-md"
             href={route.href}
           >
             {route.label}

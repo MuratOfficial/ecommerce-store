@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -15,9 +16,17 @@ const Navbar = () => {
     {
       href: `/shop`,
       label: "Shop",
-      active: pathname === "/",
+      active: pathname === "/shop",
     },
   ];
+
+  const onSetColor = (href: string) => {
+    if (href === pathname) {
+      return "text-blue-500 uppercase";
+    } else {
+      return "";
+    }
+  };
 
   return (
     <div>
@@ -44,16 +53,18 @@ const Navbar = () => {
             className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1"
             id="menu"
           >
-            <nav>
+            <nav className="flex">
               {routes.map((route) => (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  id={route.href}
-                  className="text-md font-medium transition-colors p-1 mr-2 rounded-md hover:text-primary ring-offset-2 hover:ring-2"
-                >
-                  {route.label}
-                </Link>
+                <div className={onSetColor(route.href)}>
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    id={route.href}
+                    className="text-md font-medium transition-colors p-2 mr-2 rounded-md hover:bg-blue-500 hover:text-white"
+                  >
+                    {route.label}
+                  </Link>
+                </div>
               ))}
             </nav>
           </div>
