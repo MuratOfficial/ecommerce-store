@@ -3,18 +3,17 @@
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 
-const Navbar = ({ className }: React.HTMLAttributes<HTMLElement>) => {
-  const params = useParams();
+const Navbar = () => {
   const pathname = usePathname();
 
   const routes = [
     {
-      href: "/",
+      href: `/`,
       label: "Home",
       active: pathname === "/",
     },
     {
-      href: "/shop",
+      href: `/shop`,
       label: "Shop",
       active: pathname === "/",
     },
@@ -51,7 +50,7 @@ const Navbar = ({ className }: React.HTMLAttributes<HTMLElement>) => {
                   key={route.href}
                   href={route.href}
                   id={route.href}
-                  className="text-sm font-medium transition-colors p-1 rounded-md hover:text-primary ring-offset-2 hover:ring-2"
+                  className="text-md font-medium transition-colors p-1 mr-2 rounded-md hover:text-primary ring-offset-2 hover:ring-2"
                 >
                   {route.label}
                 </Link>

@@ -3,8 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import Navbar from "@/components/navbar";
-import Carousel from "@/components/carousel";
-import Products from "@/components/products";
+
+import ContactBar from "@/components/contact-bar";
 
 const font = Urbanist({ subsets: ["latin"] });
 
@@ -22,9 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <Navbar />
-        <Carousel />
-        <Products />
+
         {children}
+        <ContactBar />
         <Footer />
       </body>
     </html>
