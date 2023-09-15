@@ -47,11 +47,12 @@ const Navbar = () => {
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
             </svg>
           </label>
-          <input className="hidden" type="checkbox" id="menu-toggle" />
+          <input className="hidden" type="checkbox" id="menu-toggle" key="4" />
 
           <div
             className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1"
             id="menu"
+            key="6"
           >
             <nav className="flex">
               {routes.map((route) => (
@@ -59,7 +60,6 @@ const Navbar = () => {
                   <Link
                     key={route.href}
                     href={route.href}
-                    id={route.href}
                     className="text-md font-medium transition-colors p-2 mr-2 rounded-md hover:bg-blue-500 hover:text-white"
                   >
                     {route.label}
@@ -69,10 +69,11 @@ const Navbar = () => {
             </nav>
           </div>
 
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2" key="12">
             <a
               className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
               href="#"
+              key="3"
             >
               <svg
                 className="fill-current text-gray-800 mr-2"
@@ -90,8 +91,13 @@ const Navbar = () => {
           <div
             className="order-2 md:order-3 flex items-center"
             id="nav-content"
+            key="7"
           >
-            <a className="inline-block no-underline hover:text-black" href="#">
+            <a
+              className="inline-block no-underline hover:text-black"
+              href="#"
+              key="1"
+            >
               <svg
                 className="fill-current hover:text-black"
                 xmlns="http://www.w3.org/2000/svg"
@@ -107,6 +113,7 @@ const Navbar = () => {
             <a
               className="pl-3 inline-block no-underline hover:text-black"
               href="#"
+              key="2"
             >
               <svg
                 className="fill-current hover:text-black"

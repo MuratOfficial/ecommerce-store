@@ -57,20 +57,21 @@ function ContactBar() {
 
   return (
     <div className="flex flex-col pt-8 gap-y-2 px-8 justify-center items-center">
-      <div className="flex gap-x-4">
+      <div className="flex gap-x-4 flex-wrap">
         {routes.map((route) => (
           <Link
-            key={route.href}
-            className="text-md font-bold ring-offset-2 bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 p-1 hover:text-white rounded-md"
+            key={route.label}
+            className="flex text-md font-bold ring-offset-2 bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 p-1 hover:text-white rounded-md"
             href={route.href}
           >
             {route.label}
           </Link>
         ))}
       </div>
-      <div className="flex gap-x-4 pt-4">
+      <div className="flex gap-x-4 pt-4 flex-wrap">
         {social.map((item) => (
           <Link
+            key={item.href}
             href={item.href}
             className="transition ease-in-out delay-150 hover:scale-125 duration-200"
           >
