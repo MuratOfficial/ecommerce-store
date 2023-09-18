@@ -2,13 +2,13 @@ import React from "react";
 
 const MiniHero = () => {
   return (
-    <div className="flex items-center justify-center pb-4 flex-col">
-      <div className="flex bg-gradient-to-r cursor-grab from-slate-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-5/6 p-4 my-2 lg:h-64 sm:h-32 rounded-md shadow-lg items-center justify-center">
+    <div className="flex items-center justify-center pb-2 flex-col">
+      <div className="flex bg-gradient-to-r cursor-grab from-slate-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-5/6 p-4 my-2 lg:h-64 sm:h-1/2 rounded-md shadow-lg items-center justify-center">
         <p className="flex  text-5xl cursor-pointer transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-110 hover:text-black duration-300">
           Billboard
         </p>
       </div>
-      <div className="flex flex-col w-5/6 my-2 lg:h-64 sm:h-32 rounded-md items-center justify-center">
+      <div className="flex flex-col w-5/6 my-2 lg:h-64 sm:h-1/2 rounded-md items-center justify-center">
         <p className="flex text-2xl">Description</p>
         <p className="flex p-4 text-lg text-center ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi rerum

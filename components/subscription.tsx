@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Subcription = () => {
+const Subscription = () => {
   return (
     <div className=" flex flex-col justify-center items-center gap-y-4">
       <h1 className="py-4 my-2 text-4xl font-bold">Subscription</h1>
@@ -30,7 +30,7 @@ const Subcription = () => {
           </button>
 
           <p className="text-sm py-1">
-            During the subcription you're confirming our
+            During the subscription you're confirming our
             <Link
               href="#"
               className="  text-blue-500 hover:text-yellow-500 font-bold"
@@ -45,4 +45,4 @@ const Subcription = () => {
   );
 };
 
-export default Subcription;
+export default Subscription;
