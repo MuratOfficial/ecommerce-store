@@ -16,8 +16,8 @@ const MiniHero = () => {
           eos itaque officia et iusto similique, adipisci nesciunt. Odio, cumque
           pariatur.
         </p>
-        <button className="h-8 px-2 rounded-md font-bold border-2 hover:text-white  hover:border-none border-blue-500  shadow-lg bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500">
-          Button
+        <button className="h-8 px-2 animate-bounce rounded-md font-bold border-2 hover:text-white  hover:border-none border-blue-500  shadow-lg bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500">
+          Shop
         </button>
       </div>
     </div>

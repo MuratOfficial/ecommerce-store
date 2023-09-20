@@ -5,7 +5,7 @@ import React from "react";
 
 function StorePage() {
   return (
-    <div className="flex p-2 flex-col">
+    <div className="flex p-2 flex-col scroll-smooth">
       <MiniHero />
       <Filter />
       <FavProducts />

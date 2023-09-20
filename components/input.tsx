@@ -15,7 +15,7 @@ function Input({ id, onChange, value, label, type }: InputProps) {
         value={value}
         type={type}
         className="
-      block rounded-md p-6 pb-2 w-full text-md bg-blue-50 focus:outline-blue-500 peer appearance-none
+      block rounded-lg p-6 pb-2 w-full text-md bg-blue-50 focus:outline-blue-500 peer appearance-none
       "
         placeholder=" "
       />
