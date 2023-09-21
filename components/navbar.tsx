@@ -81,7 +81,7 @@ const Navbar = () => {
       href: "/cabinet",
       svg: (
         <svg
-          className="fill-current hover:text-white rounded mx-1 p-1 hover:bg-blue-500"
+          className="fill-current hover:text-white rounded mt-1 mx-1 p-1 hover:bg-blue-500"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"

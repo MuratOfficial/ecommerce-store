@@ -8,7 +8,7 @@ interface ModalProps {
 }
 
 function Modal({ children, isOpen, onClose }: ModalProps) {
-  const [display, setDisplay] = useState("");
+  const [display, setDisplay] = useState("hidden");
 
   useEffect(() => {
     setTimeout(() => {
