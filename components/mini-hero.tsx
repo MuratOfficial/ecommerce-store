@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 const MiniHero = () => {
@@ -17,18 +18,12 @@ const MiniHero = () => {
           eos itaque officia et iusto similique, adipisci nesciunt. Odio, cumque
           pariatur.
         </p>
-        <button
-          onClick={() =>
-            window.scrollTo({
-              top: 500,
-              left: 0,
-              behavior: "smooth",
-            })
-          }
+        <Link
+          href="#"
           className="h-8 px-6 mt-4 animate-bounce rounded-md font-bold border-2 hover:text-white  hover:border-none border-blue-500  shadow-lg bg-gradient-to-r  hover:from-pink-500 hover:to-yellow-500"
         >
           Shop
-        </button>
+        </Link>
       </div>
     </div>
   );

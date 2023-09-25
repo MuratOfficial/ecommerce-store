@@ -6,6 +6,7 @@ import { Urbanist } from "next/font/google";
 import Navbar from "@/components/navbar";
 
 import ContactBar from "@/components/contact-bar";
+import { useEffect } from "react";
 
 const font = Urbanist({ subsets: ["latin"] });
 
@@ -19,6 +20,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    (async () => {
+      const { default: LocomotiveScroll } = await import("locomotive-scroll");
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
   return (
     <html lang="en">
       <body className={font.className}>

@@ -15,6 +15,8 @@
     "autoprefixer": "10.4.15",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "gsap": "^3.12.2",
+    "locomotive-scroll": "^5.0.0-beta.8",
     "lucide": "^0.279.0",
     "lucide-react": "^0.279.0",
     "next": "13.4.19",

@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { FadeInBlocks } from "./animate-blocks";
+
 const Stores = () => {
   const stores = [
     {
@@ -30,16 +33,18 @@ const Stores = () => {
   return (
     <div>
       <section className="bg-white py-4">
-        <div className="container mx-auto flex items-center flex-wrap pt-4 pb-4 ">
-          {stores.map((product) => (
-            <div className="w-full md:w-1/3 xl:w-1/4 p-1 flex flex-col relative hover:text-white">
-              <a href={product.href} key={product.name}>
-                <img className=" hover:brightness-90" src={product.img} />
+        <div className="container mx-auto flex items-center flex-wrap p-4 gap-y-4 ">
+          {stores.map((product, index) => (
+            <div className="w-full md:w-1/2 xl:w-1/3 p-1 flex flex-col relative hover:scale-105 ">
+              <FadeInBlocks>
+                <Link href={product.href} key={index}>
+                  <img className=" hover:brightness-90" src={product.img} />
 
-                <p className="lg:absolute md:absolute lg:inset-x-20 lg:inset-y-36 sm:text-md hover:uppercase font-bold text-3xl">
-                  {product.name}
-                </p>
-              </a>
+                  <p className="lg:absolute md:absolute lg:inset-x-36 lg:inset-y-44 sm:text-md text-center text-neutral-500 uppercase font-bold text-3xl hover:scale-110 hover:text-neutral-800">
+                    {product.name}
+                  </p>
+                </Link>
+              </FadeInBlocks>
             </div>
           ))}
         </div>
