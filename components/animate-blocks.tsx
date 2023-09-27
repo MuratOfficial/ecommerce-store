@@ -58,7 +58,7 @@ export function FadeInScroll({ children }: { children: React.ReactNode }) {
         trigger: block.current,
         toggleActions: "play none reverse none",
         start: "top 90%",
-        end: "bottom 50%",
+        end: "bottom 70%",
         scrub: true,
       },
       y: 40,
