@@ -70,7 +70,7 @@ const Navbar = () => {
       active: pathname === "/",
     },
     {
-      href: `/shop`,
+      href: `/category`,
       label: "Shop",
       active: pathname === "/shop",
     },

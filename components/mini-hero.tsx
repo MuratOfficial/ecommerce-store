@@ -1,13 +1,21 @@
 "use client";
+import { Billboard } from "@/types";
 import Link from "next/link";
 import React from "react";
 
-const MiniHero = () => {
+interface MiniHeroProps {
+  data: Billboard;
+}
+
+const MiniHero = ({ data }: MiniHeroProps) => {
   return (
     <div className="flex items-center justify-center pb-2 flex-col scroll-mt-4">
-      <div className="flex bg-gradient-to-r cursor-grab from-slate-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-5/6 p-4 my-2 lg:h-64 sm:h-1/2 rounded-md shadow-lg items-center justify-center">
+      <div
+        style={{ backgroundImage: `url(${data?.imageUrl})` }}
+        className="flex bg-gradient-to-r cursor-grab from-slate-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-5/6 p-4 my-2 lg:h-64 sm:h-1/2 rounded-md shadow-lg items-center justify-center"
+      >
         <p className="flex  text-5xl cursor-pointer transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-110 hover:text-black duration-300">
-          Billboard
+          {data.label}
         </p>
       </div>
       <div className="flex flex-col w-5/6 my-2 lg:h-64 sm:h-1/2 rounded-md items-center justify-center">

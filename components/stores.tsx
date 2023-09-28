@@ -8,7 +8,7 @@ interface StoreProps {
 
 const Stores = ({ data }: StoreProps) => {
   const stores = data.map((item) => ({
-    href: `shop/${item.id}`,
+    href: `category/${item.id}`,
     label: item.name,
   }));
 
