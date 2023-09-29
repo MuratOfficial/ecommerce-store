@@ -38,3 +38,9 @@ export interface Color {
   name: string;
   value: string;
 }
+
+export interface ProductBag {
+  id: string;
+  quantity?: number;
+  discount?: number;
+}

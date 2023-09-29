@@ -2,25 +2,39 @@ import React from "react";
 import Modal from "./modal";
 
 import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
+import useBasket from "@/hooks/useBasket";
+import useBasketPrice from "@/hooks/useBasketPrice";
+import { ProductBag } from "@/types";
 
-export interface BasketData {
-  name: string;
-  price: number;
-  quantity: number;
-  discount: number;
-}
+// export interface BasketData {
+//   name: string;
+//   price: number;
+//   quantity: number;
+//   discount: number;
+// }
 
 interface BasketModalProps {
-  data: BasketData[];
   onOpen: boolean;
   children: React.ReactNode;
   onClose: () => void;
 }
 
-function BasketModal({ data, onOpen, children, onClose }: BasketModalProps) {
+function BasketModal({ onOpen, children, onClose }: BasketModalProps) {
   // const sumItems = data.map(
   //   (item) => item.price * item.quantity * (100 - item.discount) * 0.01
   // );
+
+  const data = useBasket();
+  const onDelete = (id: string) => {
+    data.deleteItem(id);
+  };
+
+  const basketPrice: ProductBag[] = data.items.map((item) => ({
+    id: item.id,
+    quantity: 1,
+  }));
+
+  const price = useBasketPrice();
 
   return (
     <div>
@@ -29,13 +43,13 @@ function BasketModal({ data, onOpen, children, onClose }: BasketModalProps) {
           <div className="flex justify-center pt-4">
             <p className="text-4xl">Basket</p>
           </div>
-          {data.length > 0 ? (
+          {data.items.length > 0 ? (
             <div className="flex flex-col p-4 px-10">
               <div className="flex flex-col bg-blue-50 h-80 overflow-y-auto rounded-md border-blue-200 border p-2 px-4 gap-y-4">
                 <p className="text-lg mb-4">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-                {data.map((item, index) => (
+                {data.items.map((item, index) => (
                   <div
                     className="flex flex-row mx-2 gap-x-4 items-center  text-center flex-wrap"
                     key={index}
@@ -50,22 +64,25 @@ function BasketModal({ data, onOpen, children, onClose }: BasketModalProps) {
                       <div className="pr-2 cursor-pointer hover:scale-105 hover:text-blue-500">
                         <AiOutlineMinusSquare />
                       </div>
-                      {item.quantity}
+                      {/* {item.quantity} */}
                       <div className="pl-2 cursor-pointer hover:scale-105 hover:text-blue-500">
                         <AiOutlinePlusSquare />
                       </div>
                     </div>
 
-                    <div className="w-1/12">- {item.discount}%</div>
+                    {/* <div className="w-1/12">- {item.discount}%</div> */}
                     <div className="w-1/12 font-bold">
                       {" "}
-                      {item.price *
+                      {/* {item.price *
                         item.quantity *
                         (100 - item.discount) *
-                        0.01}{" "}
+                        0.01}{" "} */}
                       KZT
                     </div>
-                    <div className="w-1/12 flex justify-center items-center rounded-md bg-red-200 gap-x-2 cursor-pointer hover:scale-110 hover:bg-red-600 hover:text-white p-1">
+                    <div
+                      onClick={() => onDelete(item.id)}
+                      className="w-1/12 flex justify-center items-center rounded-md bg-red-200 gap-x-2 cursor-pointer hover:scale-110 hover:bg-red-600 hover:text-white p-1"
+                    >
                       <p>Delete</p>
                     </div>
                   </div>

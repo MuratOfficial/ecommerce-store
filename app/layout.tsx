@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 
 import ContactBar from "@/components/contact-bar";
 import { useEffect } from "react";
+import ToastProvider from "@/providers/toaster";
 
 const font = Urbanist({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ToastProvider />
         <Navbar />
 
         {children}

@@ -13,7 +13,7 @@ export function AnimateBlocks({ children }: { children: React.ReactNode }) {
         trigger: block.current,
         toggleActions: "play none reverse none",
         start: "top 90%",
-        end: "bottom 50%",
+        end: "bottom 70%",
         scrub: true,
       },
       x: -400,
@@ -62,9 +62,7 @@ export function FadeInScroll({ children }: { children: React.ReactNode }) {
         scrub: true,
       },
       y: 40,
-      duration: 3,
       opacity: 0,
-
       ease: "none",
     });
   }, []);
